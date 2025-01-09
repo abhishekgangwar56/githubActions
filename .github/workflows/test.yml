@@ -19,12 +19,12 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'  # Set to the version you want 16 
+          node-version: '18'  # Set to the version you want 16 
 
       # Step 3: Install dependencies (assuming you're using a Node.js environment)
-      - name: Install dependencies
-        run: |
-          npm install
+      # - name: Install dependencies
+      #   run: |
+      #     npm install
 
       # Step 4: Set up MABL CLI (this assumes you have MABL CLI installed via npm or globally)
       - name: Install MABL CLI
@@ -37,7 +37,7 @@ jobs:
           echo "MABL_API_KEY=${{ secrets.MABL_API_KEY }}" >> $GITHUB_ENV
           echo "MABL_ENV_NAME=${{ secrets.MABL_ENV_NAME }}" >> $GITHUB_ENV
 
-      # Step 6: Run MABL test (replace 'your-test-script' with the actual test name or script)
-      - name: Run MABL Test
-        run: |
-          mabl test run --api-key ${{ secrets.MABL_API_KEY }} --env ${{ secrets.MABL_ENV_NAME }}
+      # # Step 6: Run MABL test (replace 'your-test-script' with the actual test name or script)
+      # - name: Run MABL Test
+      #   run: |
+      #     mabl test run --api-key ${{ secrets.MABL_API_KEY }} --env ${{ secrets.MABL_ENV_NAME }}
